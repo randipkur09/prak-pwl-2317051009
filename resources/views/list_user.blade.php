@@ -28,7 +28,7 @@
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td class="fw-semibold">{{ $user->nama }}</td>
+                            <td class="fw-semibold">{{ $user->name }}</td>
                             <td>{{ $user->nim }}</td>
                             <td><span class="badge bg-primary bg-gradient">{{ $user->nama_kelas }}</span></td>
                         </tr>

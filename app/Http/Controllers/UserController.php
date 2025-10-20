@@ -24,14 +24,19 @@ class UserController extends Controller
         $this->userModel = new UserModel();
         $this->kelasModel = new Kelas();
     }
-    public function store(Request $request){
-        $this->userModel->create([
-            'nama' => $request->input('nama'),
-            'nim' => $request->input('npm'),
-            'kelas_id' => $request->input('kelas_id'),
-        ]);
-        return redirect()->to('/user');
-    }
+    public function store(Request $request)
+{
+    $this->userModel->create([
+        'name' => $request->input('nama'),
+        'nim' => $request->input('npm'),
+        'kelas_id' => $request->input('kelas_id'),
+        'email' => strtolower(str_replace(' ', '', $request->input('nama'))) . '@example.com', // buat email otomatis
+        'password' => bcrypt('password123'), // isi password dummy biar valid
+    ]);
+
+    return redirect()->to('/user');
+}
+
     //
      public function create()
     {
