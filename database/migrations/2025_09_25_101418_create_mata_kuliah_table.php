@@ -6,19 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-   public function up(): void
-{
-    Schema::create('mata_kuliah', function (Blueprint $table) {
-        $table->id();
-        $table->string('nama_mk');
-        $table->integer('sks');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('mata_kuliah', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_mk');
+            $table->integer('sks');
+            $table->timestamps();
+        });
+    }
 
-public function down(): void
-{
-    Schema::dropIfExists('mata_kuliah');
-}
-
+    public function down(): void
+    {
+        Schema::dropIfExists('mata_kuliah');
+    }
 };
